@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Wedding Invitation</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#0f0f0f;
+    color:white;
+    font-family:'Montserrat',sans-serif;
+    overflow-x:hidden;
+}
+
+.hero{
+    height:100vh;
+    position:relative;
+    background:
+    linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.7)),
+    url('https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1400&auto=format&fit=crop') center/cover;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:20px;
+}
+
+.glow{
+    position:absolute;
+    width:500px;
+    height:500px;
+    background:#d4af3760;
+    filter:blur(120px);
+    border-radius:50%;
+    animation:float 6s infinite alternate;
+}
+
+@keyframes float{
+    from{
+        transform:translateY(-20px);
+    }
+    to{
+        transform:translateY(20px);
+    }
+}
+
+.content{
+    position:relative;
+    z-index:2;
+    max-width:700px;
+}
+
+.small{
+    letter-spacing:5px;
+    text-transform:uppercase;
+    font-size:12px;
+    color:#ddd;
+}
+
+h1{
+    font-family:'Cormorant Garamond',serif;
+    font-size:85px;
+    line-height:1;
+    margin:20px 0;
+    color:#f3d27a;
+}
+
+.subtitle{
+    font-size:18px;
+    color:#ddd;
+    margin-bottom:20px;
+}
+
+.guest-box{
+    margin-top:35px;
+    padding:18px;
+    border:1px solid rgba(255,255,255,.15);
+    border-radius:20px;
+    backdrop-filter:blur(10px);
+    background:rgba(255,255,255,.05);
+}
+
+.guest-title{
+    font-size:13px;
+    color:#bbb;
+    margin-bottom:10px;
+}
+
+.guest-name{
+    font-size:28px;
+    font-weight:600;
+    color:#f3d27a;
+}
+
+.btn{
+    margin-top:30px;
+    display:inline-block;
+    padding:16px 34px;
+    border-radius:999px;
+    background:linear-gradient(135deg,#f3d27a,#d4af37);
+    color:black;
+    text-decoration:none;
+    font-weight:600;
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:scale(1.05);
+}
+
+section{
+    padding:90px 20px;
+}
+
+.container{
+    max-width:1100px;
+    margin:auto;
+}
+
+.title{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.title h2{
+    font-size:60px;
+    font-family:'Cormorant Garamond',serif;
+    color:#f3d27a;
+}
+
+.title p{
+    color:#aaa;
+    margin-top:10px;
+}
+
+.card{
+    background:rgba(255,255,255,.03);
+    border:1px solid rgba(255,255,255,.08);
+    backdrop-filter:blur(10px);
+    border-radius:30px;
+    padding:40px;
+}
+
+.couple{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+    text-align:center;
+}
+
+.person img{
+    width:180px;
+    height:180px;
+    border-radius:50%;
+    object-fit:cover;
+    border:4px solid #d4af37;
+}
+
+.person h3{
+    font-family:'Cormorant Garamond',serif;
+    font-size:45px;
+    margin-top:20px;
+    color:#f3d27a;
+}
+
+.person p{
+    color:#bbb;
+    margin-top:10px;
+}
+
+.countdown{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+    margin-top:40px;
+}
+
+.time{
+    width:110px;
+    height:110px;
+    border-radius:25px;
+    background:#171717;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    border:1px solid rgba(255,255,255,.08);
+}
+
+.time h3{
+    font-size:40px;
+    color:#f3d27a;
+}
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.gallery img{
+    width:100%;
+    height:320px;
+    object-fit:cover;
+    border-radius:25px;
+    transition:.4s;
+}
+
+.gallery img:hover{
+    transform:scale(1.03);
+}
+
+iframe{
+    width:100%;
+    height:400px;
+    border:none;
+    border-radius:30px;
+    margin-top:30px;
+}
+
+footer{
+    padding:50px 20px;
+    text-align:center;
+    color:#888;
+    border-top:1px solid rgba(255,255,255,.08);
+}
+
+.music-btn{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    background:#d4af37;
+    color:black;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    cursor:pointer;
+    font-size:24px;
+    z-index:999;
+}
+
+@media(max-width:768px){
+
+h1{
+    font-size:55px;
+}
+
+.title h2{
+    font-size:42px;
+}
+
+.person h3{
+    font-size:38px;
+}
+
+}
+</style>
+</head>
+<body>
+
+<div class="hero">
+
+<div class="glow"></div>
+
+<div class="content">
+
+<div class="small">THE WEDDING OF</div>
+
+<h1>Alfi <br>& Pasangan</h1>
+
+<p class="subtitle">
+Dengan penuh kebahagiaan kami mengundang Anda
+untuk hadir di hari spesial kami
+</p>
+
+<div class="guest-box">
+<div class="guest-title">Kepada Yth.</div>
+<div class="guest-name" id="guestName">Tamu Undangan</div>
+</div>
+
+<a href="#mempelai" class="btn" onclick="playMusic()">
+Buka Undangan
+</a>
+
+</div>
+</div>
+
+<section id="mempelai">
+
+<div class="container">
+
+<div class="title">
+<h2>Mempelai</h2>
+<p>Pasangan yang berbahagia</p>
+</div>
+
+<div class="card">
+
+<div class="couple">
+
+<div class="person">
+<img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1000" alt="">
+<h3>Alfi</h3>
+<p>Putra Pertama</p>
+</div>
+
+<div class="person">
+<img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=1000" alt="">
+<h3>Pasangan</h3>
+<p>Putri Pertama</p>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="container">
+
+<div class="title">
+<h2>Save The Date</h2>
+<p>Minggu, 20 Desember 2026</p>
+</div>
+
+<div class="countdown">
+
+<div class="time">
+<h3 id="days">0</h3>
+<span>Hari</span>
+</div>
+
+<div class="time">
+<h3 id="hours">0</h3>
+<span>Jam</span>
+</div>
+
+<div class="time">
+<h3 id="minutes">0</h3>
+<span>Menit</span>
+</div>
+
+<div class="time">
+<h3 id="seconds">0</h3>
+<span>Detik</span>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="container">
+
+<div class="title">
+<h2>Galeri</h2>
+<p>Moment indah kami</p>
+</div>
+
+<div class="gallery">
+
+<img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?q=80&w=1200">
+<img src="https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?q=80&w=1200">
+<img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=1200">
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="container">
+
+<div class="title">
+<h2>Lokasi Acara</h2>
+<p>Gedung Serbaguna Bahagia</p>
+</div>
+
+<div class="card">
+
+<iframe
+src="https://maps.google.com/maps?q=Ancaran%20Kuningan&t=&z=15&ie=UTF8&iwloc=&output=embed">
+</iframe>
+
+<center>
+<a class="btn"
+href="https://maps.app.goo.gl/YYipnC2AYisAtDJ18"
+target="_blank">
+Buka Google Maps
+</a>
+</center>
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="container">
+
+<div class="title">
+<h2>Wedding Gift</h2>
+<p>Doa restu Anda merupakan hadiah terindah</p>
+</div>
+
+<div class="card" style="text-align:center;">
+
+<h3 style="font-size:32px;color:#f3d27a;">
+BANK BCA
+</h3>
+
+<p style="margin-top:15px;font-size:22px;">
+1234567890
+</p>
+
+<p style="margin-top:10px;color:#bbb;">
+a.n Alfi Basyir
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+© 2026 Wedding Invitation • Alfi & Pasangan
+</footer>
+
+<div class="music-btn" onclick="toggleMusic()">
+♫
+</div>
+
+<audio id="music" loop>
+<source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3"></audio>
+
+<script>
+
+const params = new URLSearchParams(window.location.search);
+const to = params.get('to');
+
+if(to){
+document.getElementById('guestName').innerText = to;
+}
+
+const targetDate = new Date("Dec 20, 2026 09:00:00").getTime();
+
+setInterval(() => {
+
+const now = new Date().getTime();
+const distance = targetDate - now;
+
+const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+document.getElementById("days").innerHTML = days;
+document.getElementById("hours").innerHTML = hours;
+document.getElementById("minutes").innerHTML = minutes;
+document.getElementById("seconds").innerHTML = seconds;
+
+},1000);
+
+const music = document.getElementById("music");
+
+function toggleMusic(){
+
+if(music.paused){
+music.play();
+}else{
+music.pause();
+}
+
+}
+function playMusic(){
+    music.play();
+}
+</script>
+
+</body>
+</html>
